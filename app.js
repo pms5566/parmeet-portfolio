@@ -305,11 +305,11 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCategory.textContent = template.categoryLabel;
     
     if (externalRepoBtn) {
-      externalRepoBtn.href = `https://github.com/pms5566/my-leadscope-templates/tree/main/${encodeURIComponent(template.folder)}`;
+      externalRepoBtn.href = template.repoUrl ? template.repoUrl : `https://github.com/pms5566/my-leadscope-templates/tree/main/${encodeURIComponent(template.folder)}`;
     }
 
     // Construct raw GitHub demo viewer path
-    const rawDemoUrl = `https://raw.githack.com/pms5566/my-leadscope-templates/main/${encodeURIComponent(template.folder)}/index.html`;
+    const rawDemoUrl = template.demoUrl ? template.demoUrl : `https://raw.githack.com/pms5566/my-leadscope-templates/main/${encodeURIComponent(template.folder)}/index.html`;
     modalIframe.src = rawDemoUrl;
 
     // Reset default view to desktop
