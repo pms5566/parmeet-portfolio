@@ -138,10 +138,28 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
   }
 
-  /**
-   * Setup Event Listeners
-   */
   function setupEventListeners() {
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+    const drawerCloseBtn = document.getElementById('drawer-close-btn');
+    
+    if (mobileMenuBtn && mobileNavDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileNavDrawer.classList.add('active');
+      });
+    }
+    if (drawerCloseBtn && mobileNavDrawer) {
+      drawerCloseBtn.addEventListener('click', () => {
+        mobileNavDrawer.classList.remove('active');
+      });
+    }
+
+    document.querySelectorAll('.drawer-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileNavDrawer) mobileNavDrawer.classList.remove('active');
+      });
+    });
     // Search Input
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {

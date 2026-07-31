@@ -979,6 +979,176 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
+   Mobile Navigation Drawer & Quick UI Controls
+   -------------------------------------------------------------------------- */
+.mobile-menu-btn {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
+  max-width: 340px;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-left: 1px solid var(--border-glass);
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.mobile-nav-drawer.active {
+  right: 0;
+}
+
+.drawer-header {
+  height: 70px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.drawer-close-btn {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-links {
+  list-style: none;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
+
+.drawer-link:hover {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--primary-cyan);
+}
+
+.drawer-link i {
+  width: 24px;
+  color: var(--primary-cyan);
+}
+
+/* Floating WhatsApp Action Button */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 990;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: pulse-wa 2s infinite ease-in-out;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+}
+
+.floating-wa-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #070a12;
+}
+
+@keyframes pulse-wa {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Mobile Bottom Sticky Nav Bar */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-glass);
+  z-index: 999;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.mobile-bar-item i {
+  font-size: 1.15rem;
+}
+
+.mobile-bar-item:hover, .mobile-bar-item.active {
+  color: var(--primary-cyan);
+}
+
+/* --------------------------------------------------------------------------
    Responsive Layout Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -990,12 +1160,30 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero-title { font-size: 2.3rem; }
+  .desktop-only { display: none !important; }
+  .mobile-menu-btn { display: flex; }
+  .mobile-bottom-bar { display: flex; }
+  
+  body { padding-bottom: 64px; }
+  .hero { padding: 120px 0 60px 0; }
+  .hero-title { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1rem; }
-  .hero-actions { flex-direction: column; }
-  .hero-stats { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+  
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat-card { padding: 16px 12px; }
+  .stat-number { font-size: 1.8rem; }
+  .stat-label { font-size: 0.78rem; }
+
   .templates-grid { grid-template-columns: 1fr; }
-  .filter-pills { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; }
+  .filter-pills { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .filter-pill { scroll-snap-align: start; flex-shrink: 0; }
+  
+  .modal-overlay { padding: 0; }
   .modal-header { padding: 0 16px; }
   .device-switcher { display: none; }
+  .modal-body { padding: 0; }
+  .modal-body.view-desktop .iframe-wrapper { border-radius: 0; }
 }
+

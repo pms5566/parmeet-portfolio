@@ -42,9 +42,34 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="btn-contact-nav">Hire Me</a>
+      <a href="#contact" class="btn-contact-nav desktop-only">Hire Me</a>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </header>
+
+  <!-- Slide-out Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="drawer-header">
+      <span style="font-family: 'Outfit'; font-weight: 800; font-size: 1.2rem;">Parmeet <span style="color: var(--primary-cyan);">Singh</span></span>
+      <button id="drawer-close-btn" class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#hero" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about" class="drawer-link"><i class="fa-solid fa-user-astronaut"></i> About Parmeet</a></li>
+      <li><a href="#templates" class="drawer-link"><i class="fa-solid fa-shapes"></i> Template Showcase</a></li>
+      <li><a href="#services" class="drawer-link"><i class="fa-solid fa-code-merge"></i> Services</a></li>
+      <li><a href="#contact" class="drawer-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+    </ul>
+    <div style="padding: 24px;">
+      <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">
+        <i class="fa-solid fa-comments"></i> Hire Me Now
+      </a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
@@ -370,7 +395,20 @@
         <iframe id="modal-iframe" class="modal-iframe" src="about:blank"></iframe>
       </div>
     </div>
-  </div>
+  <!-- Mobile Bottom Sticky Navigation Bar -->
+  <nav class="mobile-bottom-bar">
+    <a href="#hero" class="mobile-bar-item"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="#about" class="mobile-bar-item"><i class="fa-solid fa-user-astronaut"></i><span>About</span></a>
+    <a href="#templates" class="mobile-bar-item"><i class="fa-solid fa-shapes"></i><span>Work</span></a>
+    <a href="#services" class="mobile-bar-item"><i class="fa-solid fa-code-merge"></i><span>Services</span></a>
+    <a href="#contact" class="mobile-bar-item"><i class="fa-solid fa-paper-plane"></i><span>Contact</span></a>
+  </nav>
+
+  <!-- Floating WhatsApp Quick Pulse Button -->
+  <a href="https://wa.me/917696507509?text=Hi%20Parmeet!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website." target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-wa-badge">1</span>
+  </a>
 
   <!-- Scripts -->
   <script src="templates_data.js"></script>
