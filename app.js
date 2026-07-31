@@ -28,10 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolio();
 
   function initPortfolio() {
+    updateCategoryPillCounts();
     renderTemplates();
     setupEventListeners();
     setupScrollAnimations();
     setupStatsCounter();
+    setupBottomSheet();
+  }
+
+  function updateCategoryPillCounts() {
+    if (!filterPillsContainer) return;
+    const counts = { all: TEMPLATES_DATA.length };
+    TEMPLATES_DATA.forEach(t => {
+      counts[t.category] = (counts[t.category] || 0) + 1;
+    });
+
+    filterPillsContainer.querySelectorAll('.filter-pill').forEach(pill => {
+      const cat = pill.dataset.category;
+      const count = counts[cat] || 0;
+      const baseLabel = pill.textContent.replace(/\s\(\d+\)$/, '');
+      pill.textContent = `${baseLabel} (${count})`;
+    });
   }
 
   /**
@@ -74,8 +91,18 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="template-card" data-id="${template.id}" data-category="${template.category}">
         <div class="card-header-banner" style="position: relative; overflow: hidden; height: 200px;">
           <img src="${template.image}" alt="${template.title}" class="card-photo-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.75);">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 10, 18, 0.4) 0%, rgba(7, 10, 18, 0.9) 100%);"></div>
-          <span class="card-badge" style="position: relative; z-index: 2;">${template.badge}</span>
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 10, 18, 0.3) 0%, rgba(7, 10, 18, 0.9) 100%);"></div>
+          
+          <div style="position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; z-index: 2;">
+            <span class="card-badge">${template.badge}</span>
+            <span class="card-badge" style="background: rgba(16, 185, 129, 0.85); color: #fff;"><i class="fa-solid fa-star" style="color: #fbbf24; margin-right: 4px;"></i> 4.9</span>
+          </div>
+
+          <!-- Quick Demo Touch Overlay Button -->
+          <button class="quick-demo-overlay-btn btn-card-preview" data-id="${template.id}" title="Instant Quick Demo">
+            <i class="fa-solid fa-play"></i> Quick Demo
+          </button>
+
           <div class="card-icon-wrapper" style="position: relative; z-index: 2; background: ${template.gradient}; border: 1px solid rgba(255, 255, 255, 0.3);">
             <i class="fa-solid ${template.icon}"></i>
           </div>
@@ -300,19 +327,75 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * Scroll Animations (Navbar & Active Links)
+   * Mobile One-Tap Quick Inquiry Bottom Sheet Setup
    */
-  function setupScrollAnimations() {
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        navbar.style.background = 'rgba(7, 10, 18, 0.95)';
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
-      } else {
-        navbar.style.background = 'var(--bg-nav)';
-        navbar.style.boxShadow = 'none';
-      }
+  function setupBottomSheet() {
+    const sheetOverlay = document.getElementById('sheet-overlay');
+    const sheetCloseBtn = document.getElementById('sheet-close-btn');
+    const sheetQuickForm = document.getElementById('sheet-quick-form');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+
+    // Search Clear Button Logic
+    if (searchInput && searchClearBtn) {
+      searchInput.addEventListener('input', () => {
+        searchClearBtn.style.display = searchInput.value ? 'block' : 'none';
+      });
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentSearchQuery = '';
+        searchClearBtn.style.display = 'none';
+        renderTemplates();
+      });
+    }
+
+    // Trigger Bottom Sheet on Hire Me buttons on mobile screens
+    document.querySelectorAll('.btn-contact-nav, .btn-primary[href="#contact"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          openBottomSheet();
+        }
+      });
     });
+
+    if (sheetCloseBtn && sheetOverlay) {
+      sheetCloseBtn.addEventListener('click', closeBottomSheet);
+      sheetOverlay.addEventListener('click', (e) => {
+        if (e.target === sheetOverlay) closeBottomSheet();
+      });
+    }
+
+    if (sheetQuickForm) {
+      sheetQuickForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = sheetQuickForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Submitting...';
+        
+        setTimeout(() => {
+          alert('Thank you! Your quick inquiry has been received. I will get back to you shortly.');
+          sheetQuickForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Instant Inquiry';
+          closeBottomSheet();
+        }, 1200);
+      });
+    }
+  }
+
+  function openBottomSheet() {
+    const sheetOverlay = document.getElementById('sheet-overlay');
+    if (sheetOverlay) {
+      sheetOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeBottomSheet() {
+    const sheetOverlay = document.getElementById('sheet-overlay');
+    if (sheetOverlay) {
+      sheetOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   }
 });
