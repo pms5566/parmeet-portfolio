@@ -175,7 +175,6 @@
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" id="search-input" class="search-input" placeholder="Search templates by niche, feature, or keyword (e.g. MedSpa, Auto, Dental)...">
-          <button id="search-clear-btn" class="search-clear-btn" title="Clear Search" style="display: none;"><i class="fa-solid fa-circle-xmark"></i></button>
         </div>
 
         <div class="filter-pills" id="filter-pills">
@@ -405,37 +404,11 @@
     <a href="#contact" class="mobile-bar-item"><i class="fa-solid fa-paper-plane"></i><span>Contact</span></a>
   </nav>
 
-  <!-- Mobile Quick Inquiry Bottom Sheet Drawer -->
-  <div id="sheet-overlay" class="sheet-overlay">
-    <div id="quick-inquiry-sheet" class="quick-inquiry-sheet">
-      <div class="sheet-handle-bar"></div>
-      <div class="sheet-header">
-        <div>
-          <h3 style="font-size: 1.25rem; font-family: 'Outfit';">Quick Inquiry</h3>
-          <p style="font-size: 0.82rem; color: var(--text-muted);">Get a response within 15 minutes</p>
-        </div>
-        <button id="sheet-close-btn" class="drawer-close-btn"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-
-      <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <a href="https://wa.me/917696507509?text=Hi%20Parmeet!%20I%20want%20to%20inquire%20about%20your%20website%20services." target="_blank" class="btn-primary" style="flex: 1; justify-content: center; background: #25d366; color: #fff; box-shadow: none; padding: 12px;">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
-        </a>
-        <a href="mailto:nobizweb@gmail.com?subject=Website%20Inquiry" class="btn-secondary" style="flex: 1; justify-content: center; padding: 12px;">
-          <i class="fa-solid fa-envelope"></i> Email Me
-        </a>
-      </div>
-
-      <form id="sheet-quick-form" style="display: flex; flex-direction: column; gap: 12px;">
-        <input type="text" id="sheet-name" class="form-input" placeholder="Your Name" required style="padding: 12px 14px;">
-        <input type="text" id="sheet-contact" class="form-input" placeholder="WhatsApp / Email" required style="padding: 12px 14px;">
-        <textarea id="sheet-notes" class="form-textarea" placeholder="Niche / Project details..." style="min-height: 70px; padding: 12px 14px;"></textarea>
-        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;">
-          <i class="fa-solid fa-paper-plane"></i> Send Instant Inquiry
-        </button>
-      </form>
-    </div>
-  </div>
+  <!-- Floating WhatsApp Quick Pulse Button -->
+  <a href="https://wa.me/917696507509?text=Hi%20Parmeet!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website." target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-wa-badge">1</span>
+  </a>
 
   <!-- Scripts -->
   <script src="templates_data.js"></script>

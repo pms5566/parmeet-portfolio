@@ -1180,101 +1180,10 @@ h1, h2, h3, h4 {
   .filter-pills { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
   .filter-pill { scroll-snap-align: start; flex-shrink: 0; }
   
-/* Search Clear Button */
-.search-clear-btn {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  transition: var(--transition-fast);
+  .modal-overlay { padding: 0; }
+  .modal-header { padding: 0 16px; }
+  .device-switcher { display: none; }
+  .modal-body { padding: 0; }
+  .modal-body.view-desktop .iframe-wrapper { border-radius: 0; }
 }
-.search-clear-btn:hover {
-  color: #ef4444;
-}
-
-/* Quick Demo Touch Overlay Button on Card Banner */
-.quick-demo-overlay-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0;
-  z-index: 5;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 10px 20px !important;
-  font-size: 0.85rem !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-}
-
-.template-card:hover .quick-demo-overlay-btn {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-@media (max-width: 768px) {
-  .quick-demo-overlay-btn {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-/* Mobile Quick Inquiry Bottom Sheet Drawer */
-.sheet-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 10, 18, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 2000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.sheet-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.quick-inquiry-sheet {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  background: rgba(15, 23, 42, 0.98);
-  border-top: 1px solid var(--border-glow);
-  border-top-left-radius: var(--radius-lg);
-  border-top-right-radius: var(--radius-lg);
-  padding: 20px 24px 32px 24px;
-  z-index: 2010;
-  transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
-}
-
-.sheet-overlay.active .quick-inquiry-sheet {
-  bottom: 0;
-}
-
-.sheet-handle-bar {
-  width: 44px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-full);
-  margin: 0 auto 16px auto;
-}
-
-.sheet-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-/* Active Haptic Touch Scale Feedback */
-button:active, .btn-primary:active, .btn-secondary:active, .filter-pill:active, .card-footer button:active {
-  transform: scale(0.96) !important;
-}
-
 
