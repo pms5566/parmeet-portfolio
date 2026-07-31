@@ -1,9 +1,10 @@
 /**
  * LeadScope Niche Website Templates Dataset
- * Contains detailed metadata and high-resolution niche imagery for all 21+ templates.
+ * Ordered according to priority: Wellness & Holistic -> Fitness & Athletics -> Beauty & Personal Care -> Luxury -> Real Estate -> Healthcare -> Automotive -> Services
  */
 
 const TEMPLATES_DATA = [
+  // 1. Wellness & Holistic
   {
     id: "wellness_project",
     title: "Holistic Wellness & Lifestyle Coaching",
@@ -34,36 +35,87 @@ const TEMPLATES_DATA = [
     tags: ["Pranic Healing", "Meditation", "Energy Cleanse", "Chakra Balance"],
     features: ["Session Booking", "Healing Testimonials", "Event Calendar", "Guided Audio"]
   },
+
+  // 2. Fitness & Athletics
   {
-    id: "aesthetic_anti_aging_medicine",
-    title: "Aesthetic & Anti-Aging Medicine",
-    folder: "Aesthetic & Anti-Aging Medicine",
-    category: "healthcare",
-    categoryLabel: "Healthcare & MedSpa",
-    description: "Ultra-luxurious, medical-grade landing experience tailored for MedSpas, Botox clinics, anti-aging therapies, and cosmetic dermatology.",
-    icon: "fa-notes-medical",
-    badge: "High Conversion",
-    gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
-    accentColor: "#ec4899",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
-    tags: ["MedSpa", "Botox", "Dermatology", "Anti-Aging"],
-    features: ["Online Booking CTA", "Before/After Gallery", "Doctor Profile", "Treatment Menu"]
+    id: "cross_fit",
+    title: "CrossFit & High Intensity Gym",
+    folder: "Cross Fit",
+    category: "fitness",
+    categoryLabel: "Fitness & Athletics",
+    description: "High-energy, gritty performance theme engineered for CrossFit boxes, functional fitness centers, and strength conditioning gyms.",
+    icon: "fa-dumbbell",
+    badge: "High Energy",
+    gradient: "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)",
+    accentColor: "#ef4444",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    tags: ["CrossFit", "WOD Tracker", "Strength & Conditioning", "Free Pass"],
+    features: ["Class Timetable", "Free Trial Claim", "Coach Profiles", "Transformation Stories"]
   },
   {
-    id: "auto_detailing_ceramic_coating_shops",
-    title: "Auto Detailing & Ceramic Coating",
-    folder: "Auto Detailing & Ceramic Coating Shops",
-    category: "automotive",
-    categoryLabel: "Automotive & Detailing",
-    description: "Sleek dark-themed template for auto detailing studios, paint protection film (PPF) specialists, ceramic coating, and custom vinyl wrap shops.",
-    icon: "fa-car-side",
-    badge: "Popular Niche",
-    gradient: "linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)",
-    accentColor: "#00f2fe",
-    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80",
-    tags: ["PPF & Vinyl", "Ceramic Coating", "Auto Wash", "Paint Correction"],
-    features: ["Package Comparison", "Vehicle Selector", "360 Showcase", "Instant Quote Form"]
+    id: "fitness_trainer",
+    title: "Personal Fitness Coach & Trainer",
+    folder: "fitness trainer",
+    category: "fitness",
+    categoryLabel: "Fitness & Athletics",
+    description: "Personal brand website template tailored for online fitness coaches, 1-on-1 personal trainers, and transformation specialists.",
+    icon: "fa-person-running",
+    badge: "Personal Brand",
+    gradient: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
+    accentColor: "#14b8a6",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
+    tags: ["Online Coaching", "1-on-1 Training", "Nutrition Plan", "Personal Coach"],
+    features: ["Client Transformations", "Program Options", "Calorie Guide", "Discovery Call CTA"]
   },
+  {
+    id: "gym_website",
+    title: "Comprehensive Gym & Fitness Club",
+    folder: "gym-website",
+    category: "fitness",
+    categoryLabel: "Fitness & Athletics",
+    description: "Modern, feature-loaded gym membership platform with class schedules, trainer rosters, membership tiers, and facility tour.",
+    icon: "fa-heart-pulse",
+    badge: "Full Featured",
+    gradient: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)",
+    accentColor: "#6366f1",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    tags: ["Gym Pass", "Fitness Club", "Group Classes", "Weightlifting"],
+    features: ["Membership Pricing", "Day Pass Claim", "Virtual Tour", "Class Schedule"]
+  },
+
+  // 3. Beauty & Salon
+  {
+    id: "luxurious_salon_website",
+    title: "Luxurious Salon & Hair Atelier",
+    folder: "luxurious-salon-website",
+    category: "beauty",
+    categoryLabel: "Beauty & Personal Care",
+    description: "Elegant, editorial-style boutique salon template designed for high-end hair stylists, color specialists, and luxury hair extensions.",
+    icon: "fa-scissors",
+    badge: "Editorial Style",
+    gradient: "linear-gradient(135deg, #f43f5e 0%, #be123c 100%)",
+    accentColor: "#f43f5e",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    tags: ["Hair Salon", "Atelier", "Stylist Showcase", "Color Spa"],
+    features: ["Stylist Selector", "Service Pricing Menu", "Instagram Feed", "Appointment Form"]
+  },
+  {
+    id: "nail_art",
+    title: "Nail Art & Manicure Studio",
+    folder: "nail-art",
+    category: "beauty",
+    categoryLabel: "Beauty & Personal Care",
+    description: "Trendy, playful aesthetic showcasing gel extensions, acrylic nail art, custom designs, and luxury spa pedicures.",
+    icon: "fa-hand-sparkles",
+    badge: "Trending",
+    gradient: "linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)",
+    accentColor: "#a855f7",
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80",
+    tags: ["Nail Art", "Acrylics", "Manicure", "Pedicure"],
+    features: ["Design Lookbook", "Shape & Length Guide", "Add-On Customizer", "Insta Booking"]
+  },
+
+  // 4. Luxury Events & Jewelry
   {
     id: "luxury_yacht_wedding_planners",
     title: "Luxury Yacht Wedding Planners",
@@ -95,19 +147,53 @@ const TEMPLATES_DATA = [
     features: ["Interactive Menus", "Dietary Filters", "Event Calculator", "Booking Calendar"]
   },
   {
-    id: "cross_fit",
-    title: "CrossFit & High Intensity Gym",
-    folder: "Cross Fit",
-    category: "fitness",
-    categoryLabel: "Fitness & Athletics",
-    description: "High-energy, gritty performance theme engineered for CrossFit boxes, functional fitness centers, and strength conditioning gyms.",
-    icon: "fa-dumbbell",
-    badge: "High Energy",
-    gradient: "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)",
-    accentColor: "#ef4444",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    tags: ["CrossFit", "WOD Tracker", "Strength & Conditioning", "Free Pass"],
-    features: ["Class Timetable", "Free Trial Claim", "Coach Profiles", "Transformation Stories"]
+    id: "jewelry",
+    title: "Fine Jewelry & Luxury Boutique",
+    folder: "jewelry",
+    category: "luxury",
+    categoryLabel: "Luxury Events & Weddings",
+    description: "Sophisticated minimalist ecommerce template for bespoke jewelers, custom engagement rings, diamonds, and luxury watch curators.",
+    icon: "fa-gem",
+    badge: "Minimalist Luxe",
+    gradient: "linear-gradient(135deg, #fbbf24 0%, #b45309 100%)",
+    accentColor: "#fbbf24",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+    tags: ["Fine Jewelry", "Custom Rings", "Diamonds", "Watches"],
+    features: ["High-Res Showcase", "Custom Ring Builder", "VIP Appointment", "Care Guide"]
+  },
+
+  // 5. Real Estate & Co-Living
+  {
+    id: "student_pg_accommodation",
+    title: "Student PG & Co-Living Hostels",
+    folder: "Student PG Accommodation",
+    category: "realestate",
+    categoryLabel: "Real Estate & Co-Living",
+    description: "Vibrant, feature-packed layout for student hostels, PG accommodations, co-living spaces, and furnished room rentals.",
+    icon: "fa-building-user",
+    badge: "High Booking",
+    gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+    accentColor: "#8b5cf6",
+    image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
+    tags: ["PG Hostel", "Student Living", "Furnished Rooms", "Co-Living"],
+    features: ["Virtual Room Tour", "Amenity Checklist", "Rent Calculator", "Visit Request"]
+  },
+
+  // 6. Healthcare & MedSpa
+  {
+    id: "aesthetic_anti_aging_medicine",
+    title: "Aesthetic & Anti-Aging Medicine",
+    folder: "Aesthetic & Anti-Aging Medicine",
+    category: "healthcare",
+    categoryLabel: "Healthcare & MedSpa",
+    description: "Ultra-luxurious, medical-grade landing experience tailored for MedSpas, Botox clinics, anti-aging therapies, and cosmetic dermatology.",
+    icon: "fa-notes-medical",
+    badge: "High Conversion",
+    gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
+    accentColor: "#ec4899",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
+    tags: ["MedSpa", "Botox", "Dermatology", "Anti-Aging"],
+    features: ["Online Booking CTA", "Before/After Gallery", "Doctor Profile", "Treatment Menu"]
   },
   {
     id: "dentist",
@@ -140,50 +226,54 @@ const TEMPLATES_DATA = [
     features: ["Symptom Checker", "Doctor Credentials", "Treatment Guide", "Telehealth Link"]
   },
   {
-    id: "student_pg_accommodation",
-    title: "Student PG & Co-Living Hostels",
-    folder: "Student PG Accommodation",
-    category: "realestate",
-    categoryLabel: "Real Estate & Co-Living",
-    description: "Vibrant, feature-packed layout for student hostels, PG accommodations, co-living spaces, and furnished room rentals.",
-    icon: "fa-building-user",
-    badge: "High Booking",
-    gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-    accentColor: "#8b5cf6",
-    image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
-    tags: ["PG Hostel", "Student Living", "Furnished Rooms", "Co-Living"],
-    features: ["Virtual Room Tour", "Amenity Checklist", "Rent Calculator", "Visit Request"]
+    id: "doctor",
+    title: "General Medical Practice & Doctor Clinic",
+    folder: "doctor",
+    category: "healthcare",
+    categoryLabel: "Healthcare & MedSpa",
+    description: "Clean, professional medical practice website built for primary care doctors, pediatricians, clinics, and family physicians.",
+    icon: "fa-stethoscope",
+    badge: "Essential",
+    gradient: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)",
+    accentColor: "#0284c7",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+    tags: ["Primary Care", "Physician", "Family Doctor", "Clinic"],
+    features: ["Patient Portal Link", "Specialty List", "Insurance Checker", "Emergency Info"]
+  },
+
+  // 7. Automotive & Detailing
+  {
+    id: "auto_detailing_ceramic_coating_shops",
+    title: "Auto Detailing & Ceramic Coating",
+    folder: "Auto Detailing & Ceramic Coating Shops",
+    category: "automotive",
+    categoryLabel: "Automotive & Detailing",
+    description: "Sleek dark-themed template for auto detailing studios, paint protection film (PPF) specialists, ceramic coating, and custom vinyl wrap shops.",
+    icon: "fa-car-side",
+    badge: "Popular Niche",
+    gradient: "linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)",
+    accentColor: "#00f2fe",
+    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80",
+    tags: ["PPF & Vinyl", "Ceramic Coating", "Auto Wash", "Paint Correction"],
+    features: ["Package Comparison", "Vehicle Selector", "360 Showcase", "Instant Quote Form"]
   },
   {
-    id: "luxurious_salon_website",
-    title: "Luxurious Salon & Hair Atelier",
-    folder: "luxurious-salon-website",
-    category: "beauty",
-    categoryLabel: "Beauty & Personal Care",
-    description: "Elegant, editorial-style boutique salon template designed for high-end hair stylists, color specialists, and luxury hair extensions.",
-    icon: "fa-scissors",
-    badge: "Editorial Style",
-    gradient: "linear-gradient(135deg, #f43f5e 0%, #be123c 100%)",
-    accentColor: "#f43f5e",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
-    tags: ["Hair Salon", "Atelier", "Stylist Showcase", "Color Spa"],
-    features: ["Stylist Selector", "Service Pricing Menu", "Instagram Feed", "Appointment Form"]
+    id: "garage",
+    title: "Auto Repair Garage & Service Center",
+    folder: "garage",
+    category: "automotive",
+    categoryLabel: "Automotive & Detailing",
+    description: "Trustworthy, conversion-oriented mechanic website for auto repair shops, brake services, engine diagnostics, and oil changes.",
+    icon: "fa-wrench",
+    badge: "Local Business",
+    gradient: "linear-gradient(135deg, #64748b 0%, #334155 100%)",
+    accentColor: "#64748b",
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+    tags: ["Auto Mechanic", "Engine Repair", "Brakes & Tires", "Oil Change"],
+    features: ["Service Pricing", "Online Scheduling", "Tire Finder", "Customer Ratings"]
   },
-  {
-    id: "nail_art",
-    title: "Nail Art & Manicure Studio",
-    folder: "nail-art",
-    category: "beauty",
-    categoryLabel: "Beauty & Personal Care",
-    description: "Trendy, playful aesthetic showcasing gel extensions, acrylic nail art, custom designs, and luxury spa pedicures.",
-    icon: "fa-hand-sparkles",
-    badge: "Trending",
-    gradient: "linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)",
-    accentColor: "#a855f7",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80",
-    tags: ["Nail Art", "Acrylics", "Manicure", "Pedicure"],
-    features: ["Design Lookbook", "Shape & Length Guide", "Add-On Customizer", "Insta Booking"]
-  },
+
+  // 8. B2B & Commercial Services
   {
     id: "commercial_espresso_distributors",
     title: "Commercial Espresso Distributors",
@@ -215,51 +305,6 @@ const TEMPLATES_DATA = [
     features: ["SqFt Estimator", "Texture Gallery", "Warranty Info", "Free Onsite Quote"]
   },
   {
-    id: "fitness_trainer",
-    title: "Personal Fitness Coach & Trainer",
-    folder: "fitness trainer",
-    category: "fitness",
-    categoryLabel: "Fitness & Athletics",
-    description: "Personal brand website template tailored for online fitness coaches, 1-on-1 personal trainers, and transformation specialists.",
-    icon: "fa-person-running",
-    badge: "Personal Brand",
-    gradient: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
-    accentColor: "#14b8a6",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
-    tags: ["Online Coaching", "1-on-1 Training", "Nutrition Plan", "Personal Coach"],
-    features: ["Client Transformations", "Program Options", "Calorie Guide", "Discovery Call CTA"]
-  },
-  {
-    id: "gym_website",
-    title: "Comprehensive Gym & Fitness Club",
-    folder: "gym-website",
-    category: "fitness",
-    categoryLabel: "Fitness & Athletics",
-    description: "Modern, feature-loaded gym membership platform with class schedules, trainer rosters, membership tiers, and facility tour.",
-    icon: "fa-heart-pulse",
-    badge: "Full Featured",
-    gradient: "linear-gradient(135deg, #6366f1 0%, #4338ca 100%)",
-    accentColor: "#6366f1",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    tags: ["Gym Pass", "Fitness Club", "Group Classes", "Weightlifting"],
-    features: ["Membership Pricing", "Day Pass Claim", "Virtual Tour", "Class Schedule"]
-  },
-  {
-    id: "jewelry",
-    title: "Fine Jewelry & Luxury Boutique",
-    folder: "jewelry",
-    category: "luxury",
-    categoryLabel: "Luxury Events & Weddings",
-    description: "Sophisticated minimalist ecommerce template for bespoke jewelers, custom engagement rings, diamonds, and luxury watch curators.",
-    icon: "fa-gem",
-    badge: "Minimalist Luxe",
-    gradient: "linear-gradient(135deg, #fbbf24 0%, #b45309 100%)",
-    accentColor: "#fbbf24",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
-    tags: ["Fine Jewelry", "Custom Rings", "Diamonds", "Watches"],
-    features: ["High-Res Showcase", "Custom Ring Builder", "VIP Appointment", "Care Guide"]
-  },
-  {
     id: "roofing_contractors",
     title: "Roofing & Exterior Contractors",
     folder: "roofing contractors",
@@ -273,36 +318,6 @@ const TEMPLATES_DATA = [
     image: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80",
     tags: ["Roofing", "Storm Damage", "Gutters", "Commercial Repair"],
     features: ["Emergency Hotline CTA", "Inspection Request", "Insurance Claim Guide", "Project Map"]
-  },
-  {
-    id: "garage",
-    title: "Auto Repair Garage & Service Center",
-    folder: "garage",
-    category: "automotive",
-    categoryLabel: "Automotive & Detailing",
-    description: "Trustworthy, conversion-oriented mechanic website for auto repair shops, brake services, engine diagnostics, and oil changes.",
-    icon: "fa-wrench",
-    badge: "Local Business",
-    gradient: "linear-gradient(135deg, #64748b 0%, #334155 100%)",
-    accentColor: "#64748b",
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
-    tags: ["Auto Mechanic", "Engine Repair", "Brakes & Tires", "Oil Change"],
-    features: ["Service Pricing", "Online Scheduling", "Tire Finder", "Customer Ratings"]
-  },
-  {
-    id: "doctor",
-    title: "General Medical Practice & Doctor Clinic",
-    folder: "doctor",
-    category: "healthcare",
-    categoryLabel: "Healthcare & MedSpa",
-    description: "Clean, professional medical practice website built for primary care doctors, pediatricians, clinics, and family physicians.",
-    icon: "fa-stethoscope",
-    badge: "Essential",
-    gradient: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)",
-    accentColor: "#0284c7",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
-    tags: ["Primary Care", "Physician", "Family Doctor", "Clinic"],
-    features: ["Patient Portal Link", "Specialty List", "Insurance Checker", "Emergency Info"]
   },
   {
     id: "city_portal",
