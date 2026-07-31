@@ -43,6 +43,8 @@ const TEMPLATES_DATA = [
     id: "pranic_healing_2",
     title: "Pranic Energy Healing & Meditation",
     folder: "pranic-healing-2",
+    repoUrl: "https://github.com/pms5566/pranic-healing-2",
+    demoUrl: "https://raw.githack.com/pms5566/pranic-healing-2/main/index.html",
     category: "wellness",
     categoryLabel: "Wellness & Holistic",
     description: "Serene, mystical layout designed for energy healers, pranic healing sanctuaries, meditation centers, and holistic spiritual practitioners.",
@@ -369,5 +371,22 @@ const TEMPLATES_DATA = [
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
     tags: ["Taxi Service", "Tour Packages", "Car Rental", "Outstation Taxi"],
     features: ["Instant Fare Quote", "Fleet Showcase", "WhatsApp Booking", "Route Estimator"]
+  },
+  {
+    id: "phoenix_fuse_website",
+    title: "Phoenix Power Electricals - HRC Fuses",
+    folder: "phoenix-fuse-website",
+    repoUrl: "https://github.com/pms5566/phoenix-fuse-website",
+    demoUrl: "https://raw.githack.com/pms5566/phoenix-fuse-website/main/index.html",
+    category: "services",
+    categoryLabel: "Industrial & B2B",
+    description: "🔥 Phoenix Power Electricals — Premium B2B industrial website for High-Voltage HRC Fuses, Switchgears, and Electrical Equipment.",
+    icon: "fa-bolt-lightning",
+    badge: "Industrial B2B",
+    gradient: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+    accentColor: "#ef4444",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    tags: ["HRC Fuses", "Switchgears", "Electrical B2B", "Industrial"],
+    features: ["Spec Sheet PDF", "Quotation Form", "Product Catalog", "Tech Specs"]
   }
 ];
