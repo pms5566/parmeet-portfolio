@@ -1298,6 +1298,9 @@ h1, h2, h3, h4 {
   .about-skills-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; text-align: left; }
   .about-skills-list .feature-pill { padding: 8px 10px; font-size: 0.76rem; width: 100%; display: flex; align-items: center; }
 
+  .services-grid { display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; padding-bottom: 16px !important; gap: 16px !important; }
+  .service-card { scroll-snap-align: center !important; flex: 0 0 86% !important; min-width: 280px !important; padding: 24px 20px !important; }
+
   .modal-overlay { padding: 0; }
   .modal-header { padding: 0 16px; }
   .device-switcher { display: none; }
