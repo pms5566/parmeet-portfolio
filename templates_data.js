@@ -4,7 +4,26 @@
  */
 
 const TEMPLATES_DATA = [
-  // 1. Wellness & Holistic
+  // 1. Featured School Template
+  {
+    id: "vanguard_school_website",
+    title: "Vanguard International School",
+    folder: "vanguard-school-website",
+    repoUrl: "https://github.com/pms5566/vanguard-school-website",
+    demoUrl: "https://raw.githack.com/pms5566/vanguard-school-website/main/index.html",
+    category: "services",
+    categoryLabel: "Education & Academy",
+    description: "Modern, professional academy & school website built for Vanguard International School featuring interactive admissions, course guides, and campus tour.",
+    icon: "fa-school",
+    badge: "Featured School",
+    gradient: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+    accentColor: "#2563eb",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    tags: ["School", "Education", "Admissions", "Campus Tour"],
+    features: ["Course Guide", "Admissions Portal", "Campus Gallery", "Parent Portal"]
+  },
+
+  // 2. Wellness & Holistic
   {
     id: "wellness_project",
     title: "Holistic Wellness & Lifestyle Coaching",
@@ -333,23 +352,6 @@ const TEMPLATES_DATA = [
     image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80",
     tags: ["City Directory", "Local Business", "Events Calendar", "Trade Listing"],
     features: ["Search Filter", "Claim Listing CTA", "Featured Spots", "Category Grid"]
-  },
-  {
-    id: "vanguard_school_website",
-    title: "Vanguard International School",
-    folder: "vanguard-school-website",
-    repoUrl: "https://github.com/pms5566/vanguard-school-website",
-    demoUrl: "https://raw.githack.com/pms5566/vanguard-school-website/main/index.html",
-    category: "services",
-    categoryLabel: "Education & Academy",
-    description: "Modern, professional academy & school website built for Vanguard International School featuring interactive admissions, course guides, and campus tour.",
-    icon: "fa-school",
-    badge: "Academy",
-    gradient: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-    accentColor: "#2563eb",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-    tags: ["School", "Education", "Admissions", "Campus Tour"],
-    features: ["Course Guide", "Admissions Portal", "Campus Gallery", "Parent Portal"]
   },
   {
     id: "sarna_travels",
