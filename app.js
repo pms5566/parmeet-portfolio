@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="btn-card-preview" data-action="preview" data-id="${template.id}">
               <i class="fa-solid fa-eye"></i> Live Demo
             </button>
-            <a href="https://github.com/pms5566/my-leadscope-templates/tree/main/${encodeURIComponent(template.folder)}" target="_blank" class="btn-card-code" title="View Source on GitHub">
+            <a href="${template.repoUrl ? template.repoUrl : 'https://github.com/pms5566/my-leadscope-templates/tree/main/' + encodeURIComponent(template.folder)}" target="_blank" class="btn-card-code" title="View Source on GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
           </div>
