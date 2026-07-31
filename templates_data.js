@@ -4,7 +4,26 @@
  */
 
 const TEMPLATES_DATA = [
-  // 1. Featured School Template
+  // 1. Featured Medical Specialist Template
+  {
+    id: "dr_rajesh_sharma_site",
+    title: "Dr. Rajesh Sharma - Orthopaedic Surgeon",
+    folder: "dr-rajesh-sharma-site",
+    repoUrl: "https://github.com/pms5566/dr-rajesh-sharma-site",
+    demoUrl: "https://raw.githack.com/pms5566/dr-rajesh-sharma-site/main/index.html",
+    category: "healthcare",
+    categoryLabel: "Healthcare & MedSpa",
+    description: "Ultra-premium custom medical website for Dr. Rajesh Sharma (Orthopaedic Surgeon & Joint Specialist) featuring online appointment booking, joint care guides, and patient portal.",
+    icon: "fa-user-doctor",
+    badge: "Featured Medical",
+    gradient: "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)",
+    accentColor: "#0284c7",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+    tags: ["Orthopaedic Doctor", "Joint Specialist", "Surgeon Clinic", "Appointment Booking"],
+    features: ["Online Appointment", "Joint Surgery Guide", "Patient Testimonials", "Doctor Profile"]
+  },
+
+  // 2. Featured School Template
   {
     id: "vanguard_school_website",
     title: "Vanguard International School",
