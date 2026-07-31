@@ -1371,9 +1371,7 @@ h1, h2, h3, h4 {
   .nav-links { display: none; }
   .desktop-only { display: none !important; }
   .mobile-menu-btn { display: flex; }
-  .mobile-bottom-bar { display: flex; }
   
-  body { padding-bottom: 64px; }
   .hero { padding: 100px 0 40px 0; }
   .hero-title { font-size: 2.1rem; word-break: break-word; }
   .hero-subtitle { font-size: 0.95rem; }
