@@ -5,6 +5,36 @@
 
 const TEMPLATES_DATA = [
   {
+    id: "wellness_project",
+    title: "Holistic Wellness & Lifestyle Coaching",
+    folder: "wellness-project",
+    category: "wellness",
+    categoryLabel: "Wellness & Holistic",
+    description: "Calm, organic design framework ideal for holistic health coaches, nutritionists, naturopaths, and wellness retreats.",
+    icon: "fa-leaf",
+    badge: "Featured Wellness",
+    gradient: "linear-gradient(135deg, #84cc16 0%, #4d7c0f 100%)",
+    accentColor: "#84cc16",
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80",
+    tags: ["Wellness Coach", "Nutritionist", "Naturopathy", "Mindfulness"],
+    features: ["Free Consultation", "Health Quiz", "Recipe Journal", "Workshop Enrolment"]
+  },
+  {
+    id: "pranic_healing_2",
+    title: "Pranic Energy Healing & Meditation",
+    folder: "pranic-healing-2",
+    category: "wellness",
+    categoryLabel: "Wellness & Holistic",
+    description: "Serene, mystical layout designed for energy healers, pranic healing sanctuaries, meditation centers, and holistic spiritual practitioners.",
+    icon: "fa-yin-yang",
+    badge: "Holistic Energy",
+    gradient: "linear-gradient(135deg, #10b981 0%, #047857 100%)",
+    accentColor: "#10b981",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
+    tags: ["Pranic Healing", "Meditation", "Energy Cleanse", "Chakra Balance"],
+    features: ["Session Booking", "Healing Testimonials", "Event Calendar", "Guided Audio"]
+  },
+  {
     id: "aesthetic_anti_aging_medicine",
     title: "Aesthetic & Anti-Aging Medicine",
     folder: "Aesthetic & Anti-Aging Medicine",
@@ -273,36 +303,6 @@ const TEMPLATES_DATA = [
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
     tags: ["Primary Care", "Physician", "Family Doctor", "Clinic"],
     features: ["Patient Portal Link", "Specialty List", "Insurance Checker", "Emergency Info"]
-  },
-  {
-    id: "pranic_healing_2",
-    title: "Pranic Energy Healing & Meditation",
-    folder: "pranic-healing-2",
-    category: "wellness",
-    categoryLabel: "Wellness & Holistic",
-    description: "Serene, mystical layout designed for energy healers, pranic healing sanctuaries, meditation centers, and holistic spiritual practitioners.",
-    icon: "fa-yin-yang",
-    badge: "Holistic",
-    gradient: "linear-gradient(135deg, #10b981 0%, #047857 100%)",
-    accentColor: "#10b981",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
-    tags: ["Pranic Healing", "Meditation", "Energy Cleanse", "Chakra Balance"],
-    features: ["Session Booking", "Healing Testimonials", "Event Calendar", "Guided Audio"]
-  },
-  {
-    id: "wellness_project",
-    title: "Holistic Wellness & Lifestyle Coaching",
-    folder: "wellness-project",
-    category: "wellness",
-    categoryLabel: "Wellness & Holistic",
-    description: "Calm, organic design framework ideal for holistic health coaches, nutritionists, naturopaths, and wellness retreats.",
-    icon: "fa-leaf",
-    badge: "Organic",
-    gradient: "linear-gradient(135deg, #84cc16 0%, #4d7c0f 100%)",
-    accentColor: "#84cc16",
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80",
-    tags: ["Wellness Coach", "Nutritionist", "Naturopathy", "Mindfulness"],
-    features: ["Free Consultation", "Health Quiz", "Recipe Journal", "Workshop Enrolment"]
   },
   {
     id: "city_portal",
