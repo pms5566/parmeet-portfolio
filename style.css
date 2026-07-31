@@ -56,6 +56,8 @@ html {
   color: var(--text-main);
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -65,6 +67,9 @@ body {
   background-attachment: fixed;
   color: var(--text-main);
   position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Ambient Animated Grid Background */
@@ -73,7 +78,7 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -1107,7 +1112,7 @@ h1, h2, h3, h4 {
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 82%;
   max-width: 340px;
   height: 100vh;
@@ -1118,12 +1123,15 @@ h1, h2, h3, h4 {
   z-index: 1500;
   display: flex;
   flex-direction: column;
-  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
 }
 
 .mobile-nav-drawer.active {
-  right: 0;
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .drawer-header {
@@ -1347,15 +1355,28 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .container {
+    padding: 0 16px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .nav-links { display: none; }
   .desktop-only { display: none !important; }
   .mobile-menu-btn { display: flex; }
   .mobile-bottom-bar { display: flex; }
   
   body { padding-bottom: 64px; }
-  .hero { padding: 120px 0 60px 0; }
-  .hero-title { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 1rem; }
+  .hero { padding: 100px 0 40px 0; }
+  .hero-title { font-size: 2.1rem; word-break: break-word; }
+  .hero-subtitle { font-size: 0.95rem; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; justify-content: center; }
   
