@@ -28,10 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolio();
 
   function initPortfolio() {
+    updateCategoryPillCounts();
     renderTemplates();
     setupEventListeners();
     setupScrollAnimations();
     setupStatsCounter();
+  }
+
+  function updateCategoryPillCounts() {
+    if (!filterPillsContainer) return;
+    const counts = { all: TEMPLATES_DATA.length };
+    TEMPLATES_DATA.forEach(t => {
+      counts[t.category] = (counts[t.category] || 0) + 1;
+    });
+
+    filterPillsContainer.querySelectorAll('.filter-pill').forEach(pill => {
+      const cat = pill.dataset.category;
+      const count = counts[cat] || 0;
+      const baseLabel = pill.textContent.replace(/\s\(\d+\)$/, '');
+      pill.textContent = `${baseLabel} (${count})`;
+    });
   }
 
   /**
@@ -72,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createTemplateCardHTML(template) {
     return `
       <div class="template-card" data-id="${template.id}" data-category="${template.category}">
-        <div class="card-header-banner" style="position: relative; overflow: hidden; height: 200px;">
+        <div class="card-header-banner" data-action="preview" data-id="${template.id}" style="position: relative; overflow: hidden; height: 200px; cursor: pointer;">
           <img src="${template.image}" alt="${template.title}" class="card-photo-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.75);">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 10, 18, 0.4) 0%, rgba(7, 10, 18, 0.9) 100%);"></div>
           <span class="card-badge" style="position: relative; z-index: 2;">${template.badge}</span>
@@ -104,10 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
    * Attach Card Click Listeners & Tilt Effects
    */
   function attachCardListeners() {
-    document.querySelectorAll('.btn-card-preview').forEach(btn => {
+    document.querySelectorAll('.btn-card-preview, .card-header-banner').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = e.currentTarget.dataset.id;
-        openPreviewModal(id);
+        if (id) openPreviewModal(id);
       });
     });
 
@@ -160,10 +176,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileNavDrawer) mobileNavDrawer.classList.remove('active');
       });
     });
-    // Search Input
+    // View Mode Toggle (Grid vs Compact List)
+    const viewToggleBtns = document.querySelectorAll('.view-toggle-btn');
+    viewToggleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        viewToggleBtns.forEach(b => b.classList.remove('active'));
+        const mode = e.currentTarget.dataset.mode;
+        e.currentTarget.classList.add('active');
+        
+        if (templatesGrid) {
+          if (mode === 'list') {
+            templatesGrid.classList.add('view-list');
+          } else {
+            templatesGrid.classList.remove('view-list');
+          }
+        }
+      });
+    });
+
+    // Search Input & Clear Button
+    const searchClearBtn = document.getElementById('search-clear-btn');
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         currentSearchQuery = e.target.value;
+        if (searchClearBtn) searchClearBtn.style.display = currentSearchQuery ? 'block' : 'none';
+        renderTemplates();
+      });
+    }
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentSearchQuery = '';
+        searchClearBtn.style.display = 'none';
         renderTemplates();
       });
     }

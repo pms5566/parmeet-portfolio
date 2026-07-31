@@ -1178,13 +1178,88 @@ h1, h2, h3, h4 {
   transition: var(--transition-fast);
 }
 
-.mobile-bar-item i {
-  font-size: 1.15rem;
+/* View Mode Toggle Switcher */
+.view-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
 }
 
-.mobile-bar-item:hover, .mobile-bar-item.active {
-  color: var(--primary-cyan);
+.view-toggle-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
 }
+
+.view-toggle-btn.active {
+  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+  color: #070a12;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Compact List View Mode for Template Gallery */
+.templates-grid.view-list {
+  grid-template-columns: 1fr !important;
+  gap: 16px !important;
+}
+
+.templates-grid.view-list .template-card {
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.templates-grid.view-list .card-header-banner {
+  width: 140px !important;
+  height: 110px !important;
+  flex-shrink: 0 !important;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.templates-grid.view-list .card-body {
+  padding: 16px 20px !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.templates-grid.view-list .card-desc,
+.templates-grid.view-list .card-features-list {
+  display: none !important;
+}
+
+.templates-grid.view-list .card-footer {
+  border-top: none !important;
+  padding-top: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .templates-grid.view-list .template-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .templates-grid.view-list .card-header-banner {
+    width: 100% !important;
+    height: 120px !important;
+  }
+  .templates-grid.view-list .card-body {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
 
 /* --------------------------------------------------------------------------
    Responsive Layout Breakpoints

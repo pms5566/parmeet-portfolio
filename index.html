@@ -175,11 +175,24 @@
         </p>
       </div>
 
-      <!-- Search & Filters -->
+      <!-- Search, View Switcher & Filters -->
       <div class="controls-wrapper">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="search-input" class="search-input" placeholder="Search templates by niche, feature, or keyword (e.g. MedSpa, Auto, Dental)...">
+        <div style="display: flex; gap: 12px; align-items: center; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+          <div class="search-box" style="flex: 1; min-width: 280px; max-width: 520px; margin: 0;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Search templates by niche, feature, or keyword (e.g. MedSpa, Auto, Dental)...">
+            <button id="search-clear-btn" class="search-clear-btn" title="Clear Search" style="display: none;"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+
+          <!-- Mobile View Switcher (Grid / List) -->
+          <div id="view-mode-toggle" class="view-mode-toggle">
+            <button class="view-toggle-btn active" data-mode="grid" title="Grid View">
+              <i class="fa-solid fa-border-all"></i> <span class="view-label">Grid</span>
+            </button>
+            <button class="view-toggle-btn" data-mode="list" title="Compact List View">
+              <i class="fa-solid fa-list-ul"></i> <span class="view-label">List</span>
+            </button>
+          </div>
         </div>
 
         <div class="filter-pills" id="filter-pills">
