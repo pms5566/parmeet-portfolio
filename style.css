@@ -970,13 +970,51 @@ h1, h2, h3, h4 {
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
-.footer {
-  padding: 40px 0;
-  border-top: 1px solid var(--border-glass);
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+/* --------------------------------------------------------------------------
+   About Parmeet Section (Responsive Layout)
+   -------------------------------------------------------------------------- */
+.about-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(16px);
 }
+
+.about-avatar-frame {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-cyan);
+  box-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.about-avatar-frame:hover {
+  transform: scale(1.03);
+}
+
+.about-avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
 
 /* --------------------------------------------------------------------------
    Mobile Navigation Drawer & Quick UI Controls
@@ -1180,6 +1218,11 @@ h1, h2, h3, h4 {
   .filter-pills { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
   .filter-pill { scroll-snap-align: start; flex-shrink: 0; }
   
+  .about-card { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; text-align: center; }
+  .about-avatar-frame { width: 130px; height: 130px; margin-bottom: 8px; border-width: 2px; }
+  .about-skills-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; text-align: left; }
+  .about-skills-list .feature-pill { padding: 8px 10px; font-size: 0.76rem; width: 100%; display: flex; align-items: center; }
+
   .modal-overlay { padding: 0; }
   .modal-header { padding: 0 16px; }
   .device-switcher { display: none; }
