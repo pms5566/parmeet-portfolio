@@ -22,6 +22,23 @@ const TEMPLATES_DATA = [
     tags: ["Orthopaedic Doctor", "Joint Specialist", "Surgeon Clinic", "Appointment Booking"],
     features: ["Online Appointment", "Joint Surgery Guide", "Patient Testimonials", "Doctor Profile"]
   },
+  {
+    id: "shopify_1_template",
+    title: "AURA Skincare & Wellness - Shopify Theme",
+    folder: "shopify-1-template",
+    repoUrl: "https://github.com/pms5566/shopify-1-template",
+    demoUrl: "https://raw.githack.com/pms5566/shopify-1-template/main/index.html",
+    category: "wellness",
+    categoryLabel: "Wellness & Holistic",
+    description: "Premium, modern E-Commerce Shopify layout customized for skincare brands, cosmetics, organic wellness shops, and beauty salons.",
+    icon: "fa-bag-shopping",
+    badge: "Shopify Store",
+    gradient: "linear-gradient(135deg, #fda4af 0%, #f43f5e 100%)",
+    accentColor: "#fda4af",
+    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=800&q=80",
+    tags: ["Shopify Theme", "Skincare", "E-Commerce", "Wellness Shop"],
+    features: ["Product Grid", "Cart Sidebar", "Newsletter Modal", "Responsive Checkout"]
+  },
 
   // 2. Featured School Template
   {
