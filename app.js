@@ -194,6 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Mobile Contact Tab Switcher (Direct Chat vs Project Form)
+    const contactTabBtns = document.querySelectorAll('.contact-tab-btn');
+    contactTabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        contactTabBtns.forEach(b => b.classList.remove('active'));
+        const tab = e.currentTarget.dataset.tab;
+        e.currentTarget.classList.add('active');
+
+        const chatTab = document.getElementById('contact-tab-chat');
+        const formTab = document.getElementById('contact-form');
+
+        if (tab === 'form') {
+          if (chatTab) chatTab.classList.remove('active');
+          if (formTab) formTab.classList.add('active');
+        } else {
+          if (formTab) formTab.classList.remove('active');
+          if (chatTab) chatTab.classList.add('active');
+        }
+      });
+    });
+
     // Search Input & Clear Button
     const searchClearBtn = document.getElementById('search-clear-btn');
     if (searchInput) {

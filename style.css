@@ -967,6 +967,81 @@ h1, h2, h3, h4 {
   min-height: 120px;
 }
 
+/* Online Status Badge & Mobile Tab Controls */
+.online-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.contact-tab-toggle {
+  display: none;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  margin: 20px 0;
+}
+
+.contact-tab-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.contact-tab-btn.active {
+  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+  color: #070a12;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contact-tab-toggle {
+    display: flex;
+  }
+
+  .contact-tab-content {
+    display: none !important;
+  }
+
+  .contact-tab-content.active {
+    display: flex !important;
+  }
+}
+
+
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */

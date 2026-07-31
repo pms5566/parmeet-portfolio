@@ -341,19 +341,35 @@
     <div class="container">
       <div class="contact-card">
         <div class="contact-info">
-          <span class="section-badge">
-            <i class="fa-solid fa-paper-plane"></i> Get In Touch
-          </span>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="section-badge" style="margin-bottom: 0;">
+              <i class="fa-solid fa-paper-plane"></i> Get In Touch
+            </span>
+            <span class="online-status-badge">
+              <span class="online-dot"></span> Available for Projects • Reply &lt; 15m
+            </span>
+          </div>
+
           <h2>Let's Build Something <span class="gradient-text">Exceptional</span></h2>
           <p>
             Interested in customizing one of my templates or building a brand-new website for your business? Reach out directly via WhatsApp, email, or order on Fiverr!
           </p>
 
-          <div class="direct-channels">
+          <!-- Mobile Segmented Control Tab Switcher -->
+          <div id="contact-tab-toggle" class="contact-tab-toggle">
+            <button class="contact-tab-btn active" data-tab="chat">
+              <i class="fa-solid fa-comments"></i> 1-Tap Direct Chat
+            </button>
+            <button class="contact-tab-btn" data-tab="form">
+              <i class="fa-solid fa-paper-plane"></i> Project Form
+            </button>
+          </div>
+
+          <div id="contact-tab-chat" class="direct-channels contact-tab-content active">
             <a href="https://wa.me/917696507509?text=Hi!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20project." target="_blank" class="channel-btn wa">
               <i class="fa-brands fa-whatsapp"></i>
               <div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Instant Chat</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Instant WhatsApp Chat</div>
                 <div>Message on WhatsApp</div>
               </div>
             </a>
@@ -376,7 +392,7 @@
           </div>
         </div>
 
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form contact-tab-content">
           <div class="form-group">
             <label for="form-name">Your Name</label>
             <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required>
