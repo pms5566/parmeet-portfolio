@@ -39,6 +39,23 @@ const TEMPLATES_DATA = [
     tags: ["Shopify Theme", "Skincare", "E-Commerce", "Wellness Shop"],
     features: ["Product Grid", "Cart Sidebar", "Newsletter Modal", "Responsive Checkout"]
   },
+  {
+    id: "trader5566",
+    title: "TradeMastery - Trading Academy & Courses",
+    folder: "trader5566",
+    repoUrl: "https://github.com/pms5566/trader5566",
+    demoUrl: "https://raw.githack.com/pms5566/trader5566/main/index.html",
+    category: "services",
+    categoryLabel: "Trading & Finance",
+    description: "High-converting academy landing page for trading mentors, stock market coaches, and finance tutors. Features live market bias marquee tickers, course category filters, and PDF download leads.",
+    icon: "fa-chart-line",
+    badge: "Trading Academy",
+    gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    accentColor: "#10b981",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
+    tags: ["Trading Academy", "Finance Courses", "Price Action", "SMC & CPR"],
+    features: ["Live Market Ticker", "Course Category Filter", "Accordion Story", "Free PDF Lead Box"]
+  },
 
   // 2. Featured School Template
   {
